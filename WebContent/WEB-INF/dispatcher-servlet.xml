@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- 
+        SKILL MAP
+     -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages.properties" /> 
+	
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    
+   <bean name="/HomePage.htm" class="controller.SkillMapController" 
+    p:formView="HomePage" p:successView="skillHome">
+ 
+      <property name="validator" ref="validatorResource" />
+    </bean>
+    
+    <bean id="validatorResource" class="validator.ResourceValidator"></bean>
+
+   
+  <bean id="teledataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    <property name="url" value="jdbc:mysql://localhost:3306/skillmap" />
+    <property name="username" value="root" />
+    <property name="password" value="tele1234" /> 
+  </bean>
+    
+   <bean id="resourceDAO" class="DAO.ResourceDAO">
+     <property name="dataSource" ref="teledataSource"></property>
+   </bean>
+
+ <bean id="mcsiDomainDAO" class="DAO.McsiDomainDAO">
+     <property name="dataSource" ref="teledataSource"></property>
+   </bean>
+ 
+ <bean id="telenetKnowledgeDAO" class="DAO.TelenetknowledgeDAO">
+     <property name="dataSource" ref="teledataSource"></property>
+   </bean>
+ 
+<bean id="toolTechnologyDAO" class="DAO.ToolTechnologyDAO">
+     <property name="dataSource" ref="teledataSource"></property>
+</bean>
+
+<bean id="processDAO" class="DAO.ProcessDAO">
+     <property name="dataSource" ref="teledataSource"></property>
+</bean>
+
+<bean id="averageDAO" class="DAO.AverageDAO">
+	 <property name="dataSource" ref="teledataSource"></property>
+</bean>
+
+</beans>

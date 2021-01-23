@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form-validation>
+<formset>
+<form name="HomePage">
+<field property="empId" depends="required">
+<arg0 key="Resources.empId"/>
+</field>
+</form>
+</formset>
+</form-validation>
+

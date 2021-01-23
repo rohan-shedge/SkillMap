@@ -1,0 +1,19 @@
+// Decompiled by DJ v3.7.7.81 Copyright 2004 Atanas Neshkov  Date: 3/19/2012 7:42:32 PM
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   MethodBeforeAdvice.java
+
+package org.springframework.aop;
+
+import java.lang.reflect.Method;
+
+// Referenced classes of package org.springframework.aop:
+//            BeforeAdvice
+
+public interface MethodBeforeAdvice
+    extends BeforeAdvice
+{
+
+    public abstract void before(Method method, Object aobj[], Object obj)
+        throws Throwable;
+}
