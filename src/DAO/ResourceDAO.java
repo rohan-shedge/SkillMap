@@ -15,11 +15,9 @@ public class ResourceDAO{
 
 	private JdbcTemplate jdbcTemplate;
 
-
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-
 
 	public List<Map<String, Object>> selectResource(String empId) {
 		String query = "SELECT * FROM RESOURCES WHERE EMPID=?";

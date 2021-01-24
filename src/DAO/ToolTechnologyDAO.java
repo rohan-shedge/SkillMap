@@ -11,9 +11,6 @@ public class ToolTechnologyDAO {
 	
 	private JdbcTemplate jdbcTemplate;
 
-
-	
-
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
@@ -33,9 +30,5 @@ public class ToolTechnologyDAO {
 		List<Map<String,Object>> domain=new ArrayList<Map<String,Object>>();
 		domain.add(toolntechnolgyMap);
 		return domain;
-		
-						
 	}
-
-
 }

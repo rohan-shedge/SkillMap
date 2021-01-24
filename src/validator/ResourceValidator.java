@@ -18,11 +18,5 @@ public class ResourceValidator implements Validator{
 	@Override
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "empId", "EmpId.required", "Not able to Read from props");
-	
-	  
-
-		
 	}
-	
-
 }

@@ -16,7 +16,6 @@ import bean.Process;
 
 public class ProcessDAO {
 	
-	
 	private JdbcTemplate jdbcTemplate;
 
 	public void setDataSource(DataSource dataSource) {
